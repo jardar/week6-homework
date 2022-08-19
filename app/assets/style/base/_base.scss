@@ -1,0 +1,13 @@
+body {
+    font-family: 'Azeret Mono', monospace, 'Noto Sans TC', sans-serif;
+}
+
+.nav-logo {
+    height: 42px;
+    width: 175px;
+}
+
+.nav-border {
+    border-bottom: 2px solid;
+    border-image: linear-gradient(90deg, #62DB54 0%, #09ACF5 100%) 2 2 2 2;
+}

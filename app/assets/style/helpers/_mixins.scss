@@ -1,0 +1,15 @@
+@mixin make-num($n:'0', $fz:48px) {
+    content: $n;
+    font-size: $fz;
+    line-height: 1;
+    font-weight: bold;
+    color: $primary;
+    background-color: $dark-1c;
+    padding-left: 8px;
+    padding-right: 8px;
+    position: absolute;
+    top: 0%;
+    left: 40px; //25%;
+    transform: translate(0, -50%);
+    // transform: translate(-50%, -50%);
+}
