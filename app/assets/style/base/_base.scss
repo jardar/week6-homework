@@ -1,5 +1,11 @@
+$font-family-azeret: 'Azeret Mono';
+
 body {
-    font-family: 'Azeret Mono', monospace, 'Noto Sans TC', sans-serif;
+    font-family: 'Noto Sans TC';
+}
+
+.font-azeret {
+    font-family: $font-family-azeret;
 }
 
 .nav-logo {

@@ -1,181 +1,70 @@
-.home__bg {
-  background-image: url('../images/bg_home.jpg');
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  height: 534px;
-}
-
+// === banner ===
 .home__banner {
-  padding: 52px 85px;
+  &__bg {
+    background-image: url('../images/bg_home_mobile.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 336px;
+
+    @include media-breakpoint-up(md) {
+      background-image: url('../images/bg_home.jpg');
+      height: 535px;
+    }
+  }
+
+  &__grid {
+    padding: 32px 28px;
+    outline: 1px solid white;
+
+    @include media-breakpoint-up(md) {
+      padding: 52px 85px;
+
+    }
+  }
+
+  &__block {
+    width: 10px;
+    height: 10px;
+    background: white;
+  }
 }
 
-// @debug map-get($utilities, "line-height")
-
-.text-grd {
-  background: linear-gradient(180deg, #09ACF5, #62DB54);
+.text-gradient {
+  background: linear-gradient(180deg, $secondary, $primary);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
 }
 
-.icon__rotate {
-  transform: rotate(90deg);
-}
-
-.icon__size {
-  font-size: 50px;
-  // width: 50px;
-  // height: 50px;
-}
-
-.icon__photo {
-  width: 100px;
-  height: 100px;
-}
-
-.title {
-  font-size: 24px; //fs-4
-  line-height: 1.5;
-}
-
-.subject {
-  font-family: 'Noto Sans TC';
-  font-size: 18px; //fs-7
-  line-height: 1.5;
-}
-
-.home__title {
-  position: relative;
-}
-
-.home__title::before {
+// === feature ===
+.underline-500:before {
   content: '';
   position: absolute;
   left: 50%;
-  transform: translate(-50%, 0%);
   bottom: -16px;
+  transform: translate(-50%, 0);
   width: 50px;
   height: 3px;
   background-color: $primary;
-}
-
-.home__title--left {
-  position: relative;
-}
-
-.home__title--left::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  // transform: translate(-50%, 0%);
-  bottom: -16px;
-  width: 50px;
-  height: 3px;
-  background-color: white;
-}
-
-.home__feature__title--left {
-  position: relative;
-}
-
-.home__feature__title--left::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  // transform: translate(-50%, 0%);
-  bottom: -16px;
-  width: 50px;
-  height: 3px;
-  background-color: $primary;
-}
-
-// .home__title--left:hover::before {
-//   background-color: $primary;
-// }
-
-.home__block {
-  width: 10px;
-  height: 10px;
-  background: white;
-}
-
-.home__hot {
-  border: 3px solid $dark-2d;
-}
-
-.home__hot:hover {
-  border: 3px solid $primary;
-}
-
-.home__feature img {
-  opacity: 0.3;
-}
-
-.home__feature:hover img {
-  opacity: 0.8;
-}
-
-.home__feature:hover .text-op-50 {
-  opacity: 1;
-}
-
-.home__feature:hover .material-icons {
-  color: $primary;
 }
 
 .home__feature {
-  position: relative;
+
+  &__icon-50 {
+    font-size: 50px;
+  }
+
+  &__icon-r90 {
+    transform: rotate(90deg);
+  }
 }
 
-.home__feature:hover .home__title--left::before {
-  background-color: $primary;
-}
-
-// .home__feature::before {
-//   content: '';
-//   position: absolute;
-//   left: 50%;
-//   transform: translate(-50%, 0%);
-//   bottom: -16px;
-//   width: 50px;
-//   height: 3px;
-//   background-color: white;
-// }
-
-.card__center {
-  top: 25%;
-
-}
-
-.text-op-50 {
-  opacity: 0.5;
-}
-
-// .home__article {
-//   border: 3px solid $dark-1c;
-//   border-radius: 25px;
-// }
-
-// .home__article:hover {
-//   //border border-3 border-primary rounded-3
-//   border: 3px solid $primary;
-//   border-radius: 25px;
-// }
-
-.home__caro {
-  background-image: url("../images/bg_share.jpg");
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-
-
-
-
+// === 上課流程 ===
 @for $i from 1 through 4 {
   .home__flow--#{$i} {
     position: relative;
+    border-radius: 12px;
   }
 
   .home__flow--#{$i}::after {
@@ -183,20 +72,89 @@
   }
 }
 
+// === 程式課程 ===
+.home__course__btn {
+  border: 1px solid white;
+  @include border-radius(8px);
 
+  padding: 16px;
 
-.btn__grd {
-  background: linear-gradient(104deg, $secondary, $primary);
-  font-size: 18px;
-  line-height: 1.5;
-  border-radius: 0.5rem;
-  border: transparent;
-  padding: 0.5rem 2rem;
-  // color: white;
+  @include media-breakpoint-up(md) {
+    padding: 24px 32px;
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: bold;
+  }
 }
 
-.btn__grd:hover {
-  opacity: 0.8;
+.myCourseSwiper {
+  width: 100%;
+  height: 100%;
+}
+
+.myCourseSwiper .swiper-slide {
+  text-align: center;
+  background: $dark;
+  flex-shrink: 1;
+  width: 80%;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+}
+
+.myCourseSwiper .swiper-slide:nth-child(2n) {
+  width: 60%;
+}
+
+.myCourseSwiper .swiper-slide:nth-child(3n) {
+  width: 40%;
+}
+
+// === 推薦課程 ===
+.home__hot {
+  border: 3px solid $dark-2d;
+  border-radius: 24px;
+
+  &:hover {
+    border: 3px solid $primary;
+  }
+
+  &__photo {
+    width: 100px;
+    height: 100px;
+  }
+
+  &__btn_gradient {
+    background: linear-gradient(104deg, $secondary, $primary);
+    font-size: 18px;
+    line-height: 1.5;
+    border-radius: 0.5rem;
+    border: transparent;
+    padding: 0.5rem 2rem;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+// === 對症下藥 === great
+.home__great {
+
+  &__subtitle {
+    opacity: 0.8;
+  }
+}
+
+// === 文章分享 === article
+.home__article {
+  &__corners {
+    display: none;
+  }
+}
+
+.home__article:hover .home__article__corners {
+  display: block;
 }
 
 .blk {
@@ -205,24 +163,115 @@
   border-top: 1px solid $primary;
   border-left: 1px solid $primary;
   border-top-left-radius: 10px;
+
+  &-r90 {
+    transform: rotate(90deg);
+  }
+
+  &-r180 {
+    transform: rotate(180deg);
+
+  }
+
+  &-r270 {
+    transform: rotate(270deg);
+  }
 }
 
-.t90 {
-  transform: rotate(90deg);
+// === 專屬你的學習課程 == review
+.home__review {
+
+  &__image {
+
+    position: relative;
+
+    img {
+      width: 98%;
+      border: transparent;
+      border-radius: 24px;
+      position: relative;
+      top: 0px;
+      left: 2px;
+    }
+
+    &::after {
+      content: '';
+      width: 98%;
+      height: 100%;
+      border: 1px solid $gray-7c;
+      border-radius: 24px;
+
+      position: absolute;
+      bottom: -5px;
+      left: 0px;
+      z-index: -1;
+    }
+  }
+
+  &__student {
+    position: relative;
+    background: white;
+
+    border-radius: 24px 24px 24px 0;
+
+    &__photo {
+      width: 80px;
+      height: 80px;
+      position: absolute;
+      right: 24px;
+      top: 0;
+      transform: translateY(-50%);
+    }
+  }
+
+  &__controller {
+    // position: absolute;
+    // bottom: 0;
+    // left: 0;
+    z-index: 10;
+  }
 }
 
-.t180 {
-  transform: rotate(180deg);
+.myReviewSwiper {
+  width: 100%;
+  height: 100%;
+
+  .review-swiper-pagination {
+    width: unset;
+  }
+
+  .swiper-pagination-bullet {
+    background-color: $primary;
+    opacity: 1;
+  }
+
+  .swiper-pagination-bullet-active {
+    width: 1em;
+    background-color: $primary;
+    border-radius: 100px;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
-.t270 {
-  transform: rotate(270deg);
-}
+// == 加入我們成為導師 === join
+.home__join {
 
-.corners {
-  display: none;
-}
+  &__book {
+    font-size: 80px;
+  }
 
-.home__article:hover .corners {
-  display: block;
+  &__btn {
+    border-color: white;
+    border-radius: 8px;
+  }
 }
