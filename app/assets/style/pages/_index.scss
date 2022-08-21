@@ -7,7 +7,7 @@
     background-repeat: no-repeat;
     height: 336px;
 
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-up(lg) {
       background-image: url('../images/bg_home.jpg');
       height: 535px;
     }
@@ -47,9 +47,26 @@
   width: 50px;
   height: 3px;
   background-color: $primary;
+
+  @include media-breakpoint-up(lg) {
+    left: 0;
+    transform: translate(0, 0);
+  }
 }
 
 .home__feature {
+
+  &__body {
+    background-color: $dark-2d;
+    border: 1px solid $dark-2d;
+    border-radius: 12px;
+
+
+    &:hover {
+      border-color: $primary;
+      background-color: $dark-20;
+    }
+  }
 
   &__icon-50 {
     font-size: 50px;
@@ -61,6 +78,23 @@
 }
 
 // === 上課流程 ===
+.flow__underline-500:before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -16px;
+  transform: translate(-50%, 0);
+  width: 50px;
+  height: 3px;
+  background-color: $primary;
+
+  @include media-breakpoint-up(lg) {
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+}
+
+
 @for $i from 1 through 4 {
   .home__flow--#{$i} {
     position: relative;
@@ -79,7 +113,7 @@
 
   padding: 16px;
 
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(lg) {
     padding: 24px 32px;
     font-size: 18px;
     line-height: 1.5;
@@ -90,25 +124,24 @@
 .myCourseSwiper {
   width: 100%;
   height: 100%;
+
+  .swiper-slide {
+    text-align: center;
+    background: $dark;
+    flex-shrink: 1;
+    width: 80%;
+  }
+
+  .swiper-slide:nth-child(2n) {
+    width: 60%;
+  }
+
+  .swiper-slide:nth-child(3n) {
+    width: 40%;
+  }
+
 }
 
-.myCourseSwiper .swiper-slide {
-  text-align: center;
-  background: $dark;
-  flex-shrink: 1;
-  width: 80%;
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
-}
-
-.myCourseSwiper .swiper-slide:nth-child(2n) {
-  width: 60%;
-}
-
-.myCourseSwiper .swiper-slide:nth-child(3n) {
-  width: 40%;
-}
 
 // === 推薦課程 ===
 .home__hot {
@@ -144,6 +177,80 @@
   &__subtitle {
     opacity: 0.8;
   }
+
+  &__box {
+    @include media-breakpoint-up(lg) {
+
+      opacity: 0.1;
+
+      &.bg {
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        height: 615px;
+
+
+        &-1 {
+          background-image: url('../images/info01.jpg');
+        }
+
+        &-2 {
+          background-image: url('../images/info02.jpg');
+        }
+
+        &-3 {
+          background-image: url('../images/info03.jpg');
+        }
+
+        &-4 {
+          background-image: url('../images/info04.jpg');
+        }
+      }
+
+    }
+
+    .material-icons {
+      color: $primary;
+    }
+
+    .underline-500:before {
+      background-color: $primary;
+    }
+
+    &:hover {
+      opacity: .88;
+
+      .material-icons {
+        color: $primary;
+      }
+
+      .underline-500:before {
+        background-color: $primary;
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+      .material-icons {
+        color: white;
+      }
+
+      .underline-500:before {
+        background-color: white;
+      }
+
+      &:hover {
+        .material-icons {
+          color: $primary;
+        }
+
+        .underline-500:before {
+          background-color: $primary;
+        }
+      }
+    }
+  }
+
+
 }
 
 // === 文章分享 === article
@@ -181,9 +288,26 @@
 // === 專屬你的學習課程 == review
 .home__review {
 
+  @include media-breakpoint-up(lg) {
+
+    background-image: url('../images/bg_share.jpg');
+
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 733px;
+    // width: 100%;
+    // height: 100%;
+
+  }
+
   &__image {
 
     position: relative;
+
+    @include media-breakpoint-up(lg) {
+      width: 60%;
+    }
 
     img {
       width: 98%;
@@ -210,9 +334,17 @@
 
   &__student {
     position: relative;
+
     background: white;
 
     border-radius: 24px 24px 24px 0;
+
+    @include media-breakpoint-up(lg) {
+      position: absolute;
+      width: 50%;
+      right: 36px;
+      bottom: 0;
+    }
 
     &__photo {
       width: 80px;
@@ -229,6 +361,12 @@
     // bottom: 0;
     // left: 0;
     z-index: 10;
+
+    @include media-breakpoint-up(lg) {
+      position: absolute;
+      bottom: 20px;
+      left: 20%;
+    }
   }
 }
 
@@ -260,11 +398,24 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+
   }
 }
 
 // == 加入我們成為導師 === join
 .home__join {
+  background-color: $dark-20;
+
+  @include media-breakpoint-up(lg) {
+    background-color: black;
+  }
+
+  &__body {
+    @include media-breakpoint-up(lg) {
+      background-color: $dark-20;
+    }
+  }
 
   &__book {
     font-size: 80px;
@@ -274,4 +425,5 @@
     border-color: white;
     border-radius: 8px;
   }
+
 }

@@ -25,18 +25,22 @@ $(function () {
         spaceBetween: 16
       }
     },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
+    // pagination: {
+    //   el: ".swiper-pagination",
+    //   clickable: true,
+    // },
   });
 
   var myReviewSwiper = new Swiper(".myReviewSwiper", {
-    loop: true,
-    autoplay: {
-      delay: 2000,
+    effect: 'fade',
+    fadeEffect: {
+      crossFade: true
     },
-    cssMode: true,
+    loop: true,
+    // autoplay: {
+    //   delay: 2000,
+    // },
+    // cssMode: true,
     navigation: {
       nextEl: ".review-swiper-button-next",
       prevEl: ".review-swiper-button-prev",
