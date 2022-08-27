@@ -25,3 +25,109 @@ $utilities: map-merge($utilities,
     ),
 
 );
+
+
+
+.text-gradient {
+    @include make-gradient;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+// my utility
+.btn-gradient {
+    @include make-gradient(104deg);
+    // background: linear-gradient(104deg, $secondary, $primary);
+    color: white;
+    font-size: 18px;
+    line-height: 1.5;
+    border-radius: 0.5rem;
+    border: transparent;
+    // padding: 0.5rem 2rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    white-space: nowrap;
+
+    @include media-breakpoint-up(xl) {
+        // padding: 0.5rem 4rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.btn-rounded-gradient {
+    @include make-gradient;
+    color: white;
+    font-size: 0;
+    border-radius: 50%;
+    border: transparent;
+    padding: 0.5rem;
+    white-space: nowrap;
+
+    @include media-breakpoint-up(xl) {
+        padding: 0.5rem;
+    }
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.btn-black {
+    font-size: 18px;
+    line-height: 1.5;
+    border-radius: 0.5rem;
+    border: 1px solid white;
+    // padding: 0.5rem 2rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    white-space: nowrap;
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.icon-24 {
+    width: 24px;
+    height: 24px;
+
+}
+
+.photo-100 {
+    width: 100px;
+    height: 100px;
+}
+
+.underline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -16px;
+    transform: translate(-50%, 0);
+    width: 50px;
+    height: 3px;
+    background-color: $primary;
+
+    @include media-breakpoint-up(xl) {
+        left: 0;
+        transform: translate(0, 0);
+    }
+}
+
+
+.underline-center::before {
+    @include media-breakpoint-up(xl) {
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+}
+
+.underline-white::before {
+    background-color: white;
+}

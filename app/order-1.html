@@ -1,0 +1,119 @@
+---
+title: 課程報名-訂單
+layout: ./app/layout.ejs
+engine: ejs
+current: order-1
+---
+
+<div class="container bg-black pt-4">
+    <div class="pt-4 bg-dark-1c mb-4 mb-md-7">
+        <div class="bar">
+            <div class="row justify-content-center">
+                <div class="col-9 col-md-7 bar-line"></div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-3 col-md-1">
+                    <div class="bar-step step-1 step-ck step-active">
+                        <p class="bar-text">
+                            課程報名
+                        </p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-6">
+                    <div class="bar-step step-2">
+                        <p class="bar-text">
+                            信用卡付款
+                        </p>
+                    </div>
+                </div>
+                <div class="col-3 col-md-1">
+                    <div class="bar-step step-3">
+                        <p class="bar-text">
+                            付款成功
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center align-items-center">
+        <div class="order1__tinfo col-md-4 mb-6">
+            <div class="order1__teacher position-relative  bg-dark-2d">
+                <div class="home__hot card align-items-center bg-dark-2d text-white pt-4 pb-2">
+                    <img class="home__hot__photo rounded-circle mb-2" src="assets/images/teacher01.jpg"
+                        class="card-img-top" alt="Belinda">
+                    <small class="fs-8 lh-base">Belinda</small>
+                    <div class="card-body px-5  pb-xl-5">
+                        <h5 class="card-title fs-6 lh-base fw-bold">2022 Python 全攻略｜從入門到實務</h5>
+                        <p class="card-text text-primary">前端語言</p>
+                        <p class="card-text">帶領無基礎、文組生、對網頁設計有興趣的人，進入網站工程領域的基礎課，將從最基礎的 HTML 語法出發。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="order1__rinfo col-md-8 text-white bg-dark-1c py-4 mb-6 py-md-7">
+            <div class="order1__reg">
+                <h2 class="fs-4 lh-base fw-bold text-center mb-4">課程報名</h2>
+                <div class="px-4 mb-5">
+                    <h3 class="fs-7 lh-base fw-bold text-center text-md-start mb-3">選擇付款方式</h3>
+                    <div class="row text-center g-2">
+                        <div class="col-6 col-xl-3">
+                            <button type="button" class="order1__payment btn btn-dark w-100 py-3 ">信用卡付款</button>
+                        </div>
+                        <div class="col-6 col-xl-3">
+                            <button type="button" class="order1__payment btn btn-dark w-100 py-3 ">超商繳款</button>
+                        </div>
+                        <div class="col-6 col-xl-3">
+                            <button type="button" class="order1__payment btn btn-dark w-100 py-3 ">ATM轉帳</button>
+                        </div>
+                        <div class="col-6 col-xl-3">
+                            <button type="button"
+                                class="order1__payment btn btn-dark w-100 py-3 text-nowrap">12期分期付款</button>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="px-4 fs-7 lh-base fw-bold text-center text-md-start">訂單資訊</h3>
+                <form class="row justify-content-center align-items-center  text-gray-c1 px-4">
+                    <div class="col-xl-6 mb-3">
+                        <label for="inputName" class="form-label ">姓名</label>
+                        <input type="text" class="form-control px-0" id="inputName" placeholder="請輸入姓名">
+                    </div>
+                    <div class="col-xl-6 mb-3">
+                        <label for="inputTel" class="form-label">電話</label>
+                        <input type="text" class="form-control px-0" id="inputTel" placeholder="請輸入電話號碼">
+                    </div>
+                    <div class="col-xl-12 mb-3">
+                        <label for="inputEmail" class="form-label">Email</label>
+                        <input type="email" class="form-control px-0" id="inputEmail" placeholder="請輸入Email">
+                    </div>
+
+                    <div class="col-xl-6 mb-3">
+                        <label for="inputCourse" class="form-label">課程</label>
+                        <select id="inputCourse" class="form-select bg-dark-1c text-white">
+                            <option selected>10堂50分鐘</option>
+                            <option>10堂50分鐘</option>
+                        </select>
+                    </div>
+
+                    <div class="col-xl-6 mb-3">
+                        <label for="inputAppoint" class="form-label">想預約的日期</label>
+                        <input type="text" class="form-control px-0" id="inputAppoint" name="inputAppoint"
+                            placeholder="請選擇日期" autocomplete="off">
+                    </div>
+                    <div class="col-xl-12 mb-4">
+                        <label for="inputPlace" class="form-label">上課地點</label>
+                        <input type="text" class="form-control px-0" id="inputPlace" placeholder="請輸入上課地點">
+                    </div>
+
+                    <div class="col-xl-6 mb-2">
+                        <p class="fs-7 font-azeret mb-0">NT$1600</p>
+                    </div>
+                    <div class="col-xl-6 text-xl-end">
+                        <a href="order-2.html" class="btn btn-primary btn-gradient w-100">前往結賬</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

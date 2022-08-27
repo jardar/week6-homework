@@ -1,0 +1,14 @@
+.class {
+    &__photo {
+        width: 100px;
+        height: 100px;
+    }
+
+    &__cat {
+        overflow-x: scroll;
+        width: 100%;
+        // -webkit-scrollbar-color: rebeccapurple green;
+        // scrollbar-color: rebeccapurple green;
+
+    }
+}

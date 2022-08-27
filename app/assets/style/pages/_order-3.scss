@@ -1,0 +1,7 @@
+.order3-mb252 {
+    margin-bottom: 252px;
+
+    @include media-breakpoint-up(xl) {
+        margin-bottom: 111px;
+    }
+}

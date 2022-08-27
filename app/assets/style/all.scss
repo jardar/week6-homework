@@ -7,4 +7,13 @@
 
 @import 'helpers/mixins';
 @import 'base/base';
+@import 'component/bar';
+@import 'layout/header';
+
 @import 'pages/index';
+@import 'pages/login';
+@import 'pages/class';
+@import 'pages/class-detail';
+@import 'pages/order-1';
+@import 'pages/order-2';
+@import 'pages/order-3';

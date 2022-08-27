@@ -1,0 +1,69 @@
+.modal-dialog {
+    max-width: 336px;
+
+    @include media-breakpoint-up(xl) {
+        max-width: 636px;
+    }
+}
+
+.login {
+    &__close {
+        @include media-breakpoint-up(xl) {
+            position: absolute;
+            top: 4px;
+            right: 0;
+        }
+    }
+
+    &__input {
+        background-color: $dark-1c;
+        color: white;
+
+        &::placeholder {
+            background-color: $dark-1c;
+            color: $gray-c1;
+        }
+
+        &:focus {
+            background-color: $dark-1c;
+            color: white;
+        }
+    }
+
+    &__btn {
+        &__close {
+            display: inline-block;
+            font-size: 0;
+
+            .material-icons {
+                display: block;
+                font-style: 14px;
+                color: white;
+            }
+        }
+    }
+
+    &__subtext {
+        position: relative;
+        // text-align: center;
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 80px;
+            height: 1px;
+            display: block;
+            background-color: $gray-c1;
+        }
+
+        &::before {
+            left: calc(-16px - 80px);
+        }
+
+        &::after {
+            right: calc(-16px - 80px);
+        }
+    }
+}

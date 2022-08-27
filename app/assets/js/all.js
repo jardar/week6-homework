@@ -53,6 +53,13 @@ $(function () {
     keyboard: true,
   });
 
+  const elem = document.querySelector('input[name="inputAppoint"]');
+  console.log(`found date pick=${elem}`)
+  const datepicker = new Datepicker(elem, {
+    // ...options
+    language: 'zh-TW',
+    buttonClass: 'btn',
+  });
 });
 
 

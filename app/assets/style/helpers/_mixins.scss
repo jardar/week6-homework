@@ -13,3 +13,7 @@
     transform: translate(0, -50%);
     // transform: translate(-50%, -50%);
 }
+
+@mixin make-gradient($deg:180deg, $start-color:$secondary, $end-color:$primary) {
+    background: linear-gradient($deg, $start-color, $end-color);
+}
